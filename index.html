@@ -5,10 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>テンプレート</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="container bar">
+        <label class="floatLeft" for="navBtn"><span></span></label>
+        <span class="floatRight paddingRight2rem">
+            Welcome to my WebPage! 
+        </span>
+    </div>
+    <div class="container">
+        <input type="checkbox" class="navBtn" id="navBtn" />
+        <nav>
+            <ul>
+                <li>
+                    <a href="#"><i class="fa fa-heart"></i>About Me</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-medkit"></i>What I do</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-heartbeat"></i>Portfolio</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
         <section class="intro">
                 <div class="content">
                   <div class="header-group">
@@ -18,13 +41,6 @@
                 </div>
         </section>
 
-        <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Clients</a>
-          <a href="#">Contact</a>
-        </div>
-        
+      
 </body>
 </html>
