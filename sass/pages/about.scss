@@ -17,6 +17,7 @@
       transform: translate(-50%,-50%);
       border-radius: 50%;
       border: 5px solid $bg-gradient-1;
+      cursor:pointer;
     }
     
     h2{
@@ -179,11 +180,14 @@
     background-color: rgba(0, 0, 0, 0.8);
     text-align:center;
   }
+
   
   .img-box {
     position: relative;
     margin-top: 100px;
     display:inline-block;
+    background-image: url(/assets/img/池さんモデル風.jpg);
+    height: 600px;
   }
   
   .close {

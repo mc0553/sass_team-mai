@@ -38,11 +38,6 @@ $( document ).ready(function() {
        $('.img-box').append($('<span class="close">&times;</span>'))
        $('.img-box').append($('<img class="lightbox"  width="500px">'))
    
-       //クリックされた画像のsrcを取得する
-      //  let imgSrc = $(this).attr('src');
-       let imgSrc = $(this).attr('src');
-       //作成した<img class="lightbox">のsrcにクリックされた画像のsrcを設定
-       $('.lightbox').attr('src', imgSrc);
    
        // .closeがクリックされたら、img-boxを消す
        $('.close').click(function() {
