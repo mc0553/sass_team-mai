@@ -79,3 +79,306 @@ $breakpoints: (
 
 
 
+section{
+  background: url("https://source.unsplash.com/cTO6DWSIdWI");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-position: center;
+   /* u use background position to have the image full content and not cut off 
+   remove background position to see the difference*/
+   height: 100vh;
+}
+
+.header-group{
+  background: rgba(255,255,255,0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 550px;
+  padding: 20px 50px;
+  border: 4px solid #fff;
+  font-family: 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+  text-align: center;
+  -moz-box-shadow: inset 0px 0px 2px 0px #2c3e50;
+  -webkit-box-shadow: inset 0px 0px 2px 0px #2c3e50;
+  -o-box-shadow: inset 0px 0px 2px 0px #2c3e50;
+  box-shadow: inset 0px 0px 2px 0px #2c3e50;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#2c3e50, Direction=NaN, Strength=2);
+  opacity: 0;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  
+
+
+@keyframes fadeIn{
+  0%{opacity:0;}
+  100%{opacity:1;}
+}
+
+  .header-title{
+    color: #fff;
+    font-size: 6.5em;
+    text-shadow: 5px 2px #2d2d2d;
+  }
+
+  span{
+    color: #eaeaea;
+    font-size:2.8em;
+    text-shadow: 0px 2px 5px #2d2d2d;
+    }
+}
+
+/* ==========================================================================
+Google Fonts
+========================================================================== */
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
+/* ==========================================================================
+clearfix
+========================================================================== */
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+/* ==========================================================================
+html, body and stuff
+========================================================================== */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: 'PT Sans', sans-serif;
+  background-color: #f3f3f3;
+}
+
+/* ==========================================================================
+text
+========================================================================== */
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+padding / margin
+========================================================================== */
+.padding1rem {
+  padding: 1rem;
+}
+
+.paddingRight2rem {
+  padding: 0 2rem 0 0;
+}
+
+/* ==========================================================================
+links
+========================================================================== */
+a {
+  color: white;
+}
+
+/* ==========================================================================
+headlines
+========================================================================== */
+/* ==========================================================================
+awesome Fonts
+========================================================================== */
+i {
+  color: #d1d4d9;
+  margin: 0 1rem 0 0;
+}
+
+/* ==========================================================================
+layout
+========================================================================== */
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: absolute;
+}
+
+.floatLeft {
+  float: left;
+}
+
+.floatRight {
+  float: right;
+}
+
+.posAbs {
+  position: absolute;
+}
+
+.third {
+  width: 33.3333%;
+}
+
+.half {
+  width: 50%;
+}
+
+.twoThird {
+  width: 66.6666%;
+}
+
+.quarter {
+  width: 25%;
+}
+
+label {
+  cursor: pointer;
+  border-right: 1px solid #d1d4d9;
+  display: block;
+  height: 4rem;
+  width: 4rem;
+  position: relative;
+}
+label span {
+  border-radius: 15%;
+  height: 3px;
+  width: 32px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  transition: all 0.3s ease-out;
+}
+label span:before {
+  border-radius: 15%;
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  top: 400%;
+  transition: all 0.3s ease-out;
+}
+label span:after {
+  border-radius: 15%;
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  top: -400%;
+  transition: all 0.3s ease-out;
+}
+
+label:hover span {
+  height: 0;
+  transition: all 0.3s ease-out;
+}
+label:hover span:before {
+  height: 3px;
+  transform: rotate(-45deg);
+  transition: all 0.3s ease-out;
+}
+label:hover span:after {
+  height: 3px;
+  transform: rotate(45deg);
+  transition: all 0.3s ease-out;
+}
+
+.bar {
+  color: white;
+  background-color: #4a4e54;
+  line-height: 4rem;
+  border: 1px solid grey;
+}
+
+nav {
+  border-left: 1px solid #d1d4d9;
+  border-right: 1px solid #d1d4d9;
+  border-bottom: 1px solid #d1d4d9;
+  max-width: 300px;
+  background-color: white;
+  transform: translateX(-100%) scale(1, 0.1);
+  transform-origin: top left;
+  transition: all 0.3s ease-out;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav ul li {
+  border-top: 1px solid #efefef;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.6s ease-out;
+}
+nav ul li a {
+  transition: all 0.3s ease-out;
+  line-height: 1rem;
+  text-decoration: none;
+  color: #8a8d92;
+  display: block;
+  padding: 1rem;
+}
+nav ul li:first-child {
+  border-top: none;
+}
+nav ul li:hover a {
+  color: white;
+  background-color: #6d747e;
+  transition: all 0.3s ease-out;
+}
+nav ul li:hover a i {
+  color: white;
+}
+
+.navBtn:checked ~ nav {
+  transform: translateX(0);
+  transition: all 0.3s ease-out;
+}
+
+.navBtn:checked ~ nav ul li {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.6s ease-out;
+}
+
+.navBtn {
+  display: none;
+}
