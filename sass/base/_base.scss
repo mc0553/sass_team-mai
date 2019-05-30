@@ -1,3 +1,10 @@
+html {
+    font-size: 62.5%;
+}
+
+/* Fontsの変数 */
+$main-font: 'PT Sans', sans-serif;
+
 html, body {
    width: 100%;
    height: 100%;
@@ -13,15 +20,19 @@ section{
 @import url(https://fonts.googleapis.com/css?family=PT+Sans);
 
 /* Fonts */
+// >>>>>>> develop
 $font: 'Ubuntu', sans-serif;
 $font-size-1: 1.2em;
 $font-size-2: 1.8em;
 $font-size-3: 2em;
 $font-size-4: 2.5em;
 
+
+
 /* Colors */
 $bg-color-1: #2d2d2d;
 $bg-color-2 : #f9f9f9;
+
 $bg-gradient-1: #000111;
 $bg-gradient-2: #380047;
 $bg-gradient-3: #1f0029;
@@ -30,6 +41,10 @@ $text-color-1: #fff;
 $text-color-2: #c2c2c2;
 $text-color-3: #4d4d4d;
 $text-color-4: #2d2d2d;
+// <<<<<<< HEAD
+//ここまでが変数のベース
+
+//全体の基本設定
 
 *,
 *:before,
@@ -40,6 +55,26 @@ $text-color-4: #2d2d2d;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+// <<<<<<< HEAD
+html,
+body{
+  width: 100%;
+  height: 100%;
+  font-family: $main-font;
+}
+
+section{
+  width: 100%;
+  padding: 30px;
+  position: relative;
+  
+  h2{
+    font-size: $font-size-2;
+    text-align: center;
+  }
+}
+//ここまでが全体の基本設定
 
 
 .portfolio{
