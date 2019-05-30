@@ -1,6 +1,83 @@
 @import "./base/_reset.scss";
 
 @import "./base/**";
+@import "./modules/**";
+@import "./pages/about.scss";
+
+
+// レスポンシブ対応
+// map (JSの連想配列みたいなもの)
+$breakpoints: (
+    xs: "only screen and (max-width: 480px)",
+    s: "only screen and (max-width: 575px)",
+    m: "only screen and (max-width: 768px)",
+    l: "only screen and (max-width: 991px)",
+    xl: "only screen and (max-width: 1199px)",
+);
+@mixin media($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+//ここからがレスポンシブＬ
+@include media(l){
+    .services .services-container .service{
+      position: relative;
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: 5%;
+  }
+  .portfolio .projects .project{
+      width: 45%;
+      margin-left: 2.5%;
+      margin-right: 2.5%;
+  }
+}
+
+//ここからがレスポンシブm　PC画面小さくした用
+@include media(m){
+    .services{
+      width: 100%;
+      padding: 20px 0;
+      
+      .services-container{
+       display: grid;
+      }
+    }
+
+    .intro .content .header-group{
+        width: 350px;
+        .header-title{
+            font-size: $font-size-4;
+          }
+        span{
+            font-size: $font-size-1;
+          }
+    }
+}
+
+//ここからがレスポンシブxs スマホ用
+@include media(xs){
+    .portfolio .projects .project{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    } 
+    .contact .socials{
+        width: 100%;
+          .social{
+          width: 25%;
+          }
+    } 
+
+}
+
+//ここまでがレスポンシブ対応
+
+
+
 
 section{
   background: url("https://source.unsplash.com/cTO6DWSIdWI");
