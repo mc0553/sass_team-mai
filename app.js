@@ -1,8 +1,8 @@
 $(window).scroll(function(){
-    if ($(this).scrollTop() > 50){
-        $('scrolltop:hidden').stop(true, true).fadeIn();
+    if ($(this).scrollTop() > 100){
+        $('.scrolltop:hidden').stop(true, true).fadeIn();
     } else{
-        $('scrolltop').stop(true, true).fadeOut();
+        $('.scrolltop').stop(true, true).fadeOut();
     }
 });
 $(function(){
