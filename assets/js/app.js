@@ -10,12 +10,18 @@ $( document ).ready(function() {
       if(scrollTop > aboutPosition){
         image.css({'top': 0})
       }
-  
-  
-      let fadeInTime = 0;
-  
+
+
+
+
+
+
+
+
+
+      
+      let fadeInTime = 0;  
       $('.service').each( function(i){
-  
           let bottom_of_object = $(this).offset().top + $(this).outerHeight();
           let bottom_of_window = $(window).scrollTop() + $(window).height();
   
@@ -25,6 +31,10 @@ $( document ).ready(function() {
              fadeInTime = fadeInTime + 1000;
           }
       });
+
+
+
+
     });
     
     
