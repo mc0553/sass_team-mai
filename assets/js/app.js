@@ -1,4 +1,6 @@
+
 $( document ).ready(function() {
+
     let image = $('.img-profile');
     let aboutPosition = $('.about-myself').offset().top/1.5;
   
@@ -10,12 +12,15 @@ $( document ).ready(function() {
       if(scrollTop > aboutPosition){
         image.css({'top': 0})
       }
-  
-  
-      let fadeInTime = 0;
-  
+      //洋子のスクロール
+      if (scrollTop > 100){
+        $('.scrolltop:hidden').stop(true, true).fadeIn();
+      } else{
+        $('.scrolltop').stop(true, true).fadeOut();
+      }
+
+      let fadeInTime = 0;  
       $('.service').each( function(i){
-  
           let bottom_of_object = $(this).offset().top + $(this).outerHeight();
           let bottom_of_window = $(window).scrollTop() + $(window).height();
   
@@ -26,7 +31,6 @@ $( document ).ready(function() {
           }
       });
     });
-    
     
     //画像がクリックされたら、div＃overを追加
     　
@@ -55,7 +59,13 @@ $( document ).ready(function() {
      })
 
 
-
+    //  youkoのトップへ戻るボタン
+    $('.scrolltop').click(function(){
+      $("html, body").animate({
+          scrollTop:$(".container").offset().top
+      }, "1000");
+      return false
+  })
 
 
 
