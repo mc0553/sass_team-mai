@@ -27,7 +27,7 @@ $( document ).ready(function() {
           if( bottom_of_window > bottom_of_object/1.25 ){
   
             $(this).delay(fadeInTime).animate({'opacity':'1'},2000);
-             fadeInTime = fadeInTime + 1000;
+             fadeInTime = fadeInTime + 400;
           }
       });
     });
