@@ -38,7 +38,6 @@ $( document ).ready(function() {
        $('.img-box').append($('<span class="close">&times;</span>'))
        $('.img-box').append($('<img class="lightbox"  width="500px">'))
    
-   
        // .closeがクリックされたら、img-boxを消す
        $('.close').click(function() {
    
