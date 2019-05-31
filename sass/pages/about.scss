@@ -10,8 +10,6 @@ $font-size-2: 1.8em;
 $font-size-3: 2em;
 $font-size-4: 2.5em;
 
-
-
 $bg-color-1: #2d2d2d;
 $bg-color-2 : #f9f9f9;
 
@@ -23,6 +21,16 @@ $text-color-1: #fff;
 $text-color-2: #c2c2c2;
 $text-color-3: #4d4d4d;
 $text-color-4: #2d2d2d;
+
+@mixin uramen() {
+  width: 100%;
+  box-sizing: border-box;
+  transform: rotateX(90deg);
+  transition: all 0.8s ease 0.05s;
+  transform-origin: 50% 50% -25px;
+  background-size: cover;
+}
+
 
 .about-myself{
     background: $bg-gradient-1;
@@ -126,32 +134,17 @@ $text-color-4: #2d2d2d;
 
            .uramen1{
             //swift
-            width: 100%;
-            box-sizing: border-box;
-            transform: rotateX(90deg);
-            transition: all 0.8s ease 0.05s;
-            transform-origin: 50% 50% -25px;
-            background-size: cover;
+            @include uramen();
             background-image: url(/assets/img/300360池さんバギーに乗る.jpg);
            }
            .uramen2{
             //swift
-            width: 100%;
-            box-sizing: border-box;
-            transform: rotateX(90deg);
-            transition: all 0.8s ease 0.05s;
-            transform-origin: 50% 50% -25px;
-            background-size: cover;
+            @include uramen();
             background-image: url(/assets/img/300360池さんラクダに乗る.jpg);
            }
            .uramen3{
             //swift
-            width: 100%;
-            box-sizing: border-box;
-            transform: rotateX(90deg);
-            transition: all 0.8s ease 0.05s;
-            transform-origin: 50% 50% -25px;
-            background-size: cover;
+            @include uramen();
             background-image: url(/assets/img/300360池さん会社員姿.jpg);
            }
             
@@ -163,7 +156,7 @@ $text-color-4: #2d2d2d;
             box-sizing: border-box;
             transform: translateZ(0px);
             transition: all 0.2s ease;
-            transform-origin: 50% 50% -25px;
+            transform-origin: 65% 65% -25px;
             
             color: $text-color-1;
             -webkit-transform: rotate(-45deg);
@@ -180,6 +173,7 @@ $text-color-4: #2d2d2d;
         p{
           color: $text-color-3;
           text-align: justify;
+          line-height: 24px;
         }
       }
     }
@@ -225,15 +219,6 @@ $text-color-4: #2d2d2d;
   }
   //ここまでがやっさんのエリア
   
-  
-
-
-
-
-
-
-
-  //ここまでがyokoの担当エリア
   
   .clear{
     clear: both;
