@@ -95,6 +95,7 @@ section{
         width: 100%;
         max-width: 1000px;
         margin: auto;
+        margin-top: 50px;
 
         .project{
             position: relative;
@@ -188,10 +189,13 @@ section{
 .scrolltop {
     display: none;
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
     position: fixed;
     bottom: 20px;
-    right: 10px;
+}
+
+.fa-angle-up{
+    cursor: pointer;
 }
 
 .scroll {

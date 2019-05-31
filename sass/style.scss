@@ -1,5 +1,4 @@
 @import "./base/_reset.scss";
-
 @import "./base/**";
 @import "./modules/**";
 @import "./pages/about.scss";
@@ -85,20 +84,21 @@ $breakpoints: (
     } 
 
 }
-
 //ここまでがレスポンシブ対応
 
+<<<<<<< HEAD
 
 
+=======
+//maeのところ
+>>>>>>> 132f8a10fbf424b71ef1a14432fba0c5d3c6b855
 .intro{
   background: url("https://source.unsplash.com/cTO6DWSIdWI");
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-attachment: fixed;
-   background-position: center;
-   /* u use background position to have the image full content and not cut off 
-   remove background position to see the difference*/
-   height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100vh;
 }
 
 .header-group{
@@ -245,8 +245,16 @@ layout
   max-width: 100%;
   margin: 0 auto;
   overflow: hidden;
+<<<<<<< HEAD
   margin-top: 0px;
   margin-bottom: 0px;
+=======
+  display: absolute;
+  color: white;
+  background-color: #4a4e54;
+  line-height: 4rem;
+  border: 1px solid grey;
+>>>>>>> 132f8a10fbf424b71ef1a14432fba0c5d3c6b855
 }
 
 .floatLeft {
@@ -332,12 +340,6 @@ label:hover span:after {
   transition: all 0.3s ease-out;
 }
 
-.bar {
-  color: white;
-  background-color: #4a4e54;
-  line-height: 4rem;
-  border: 1px solid grey;
-}
 
 nav {
   border-left: 1px solid #d1d4d9;
