@@ -1,12 +1,9 @@
 @import "./base/_reset.scss";
-
 @import "./base/**";
 @import "./modules/**";
 @import "./pages/about.scss";
 
-
 /* Colors */
-
 $bg-color-1: #2d2d2d;
 $bg-color-2 : #f9f9f9;
 
@@ -18,6 +15,7 @@ $text-color-1: #fff;
 $text-color-2: #c2c2c2;
 $text-color-3: #4d4d4d;
 $text-color-4: #2d2d2d;
+
 // レスポンシブ対応
 // map (JSの連想配列みたいなもの)
 $breakpoints: (
@@ -86,22 +84,16 @@ $breakpoints: (
     } 
 
 }
-
 //ここまでがレスポンシブ対応
-
-
 
 //maeのところ
 .intro{
-
   background: url("https://source.unsplash.com/cTO6DWSIdWI");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-   /* u use background position to have the image full content and not cut off 
-   remove background position to see the difference*/
-   height: 100vh;
+  height: 100vh;
 }
 
 .header-group{
