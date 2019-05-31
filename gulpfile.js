@@ -12,7 +12,7 @@ gulp.task('sass', function () {
   return gulp.src('./sass/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sassGlob())
-    .pipe(cleanCSS({keepBreaks: false}))
+    // .pipe(cleanCSS({keepBreaks: false}))
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
