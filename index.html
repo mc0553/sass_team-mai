@@ -9,18 +9,30 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-
     <!-- TOP PAGE -->
     <div class="container">
         <label class="floatLeft" for="navBtn"><span></span></label>
-        <span class="floatRight paddingRight2rem">
+        <!--サムネ(小)指定。拡大画像と同じものをCSSでサイズを縮小して表示してますが、別に縮小画像を作成してその画像を指定しても可能。サムネには透明加工付。クリック時は、透明度が消えるように-->
+        <div class="m_size">
+            <a href="javascript:Show(0);"><img src="./assets/img/池さん飛ぶ.jpg"></a>
+            <a href="javascript:Show(1);"><img src="./assets/img/池さんbefore after.jpg"></a>
+            <a href="javascript:Show(2);"><img src="./assets/img/沖縄校3期生.jpg"></a>
+            <a href="javascript:Show(3);"><img src="./assets/img/教える池さん.jpg"></a>
+            <a href="javascript:Show(4);"><img src="./assets/img/集団の池さん.jpg"></a>
+            <a href="javascript:Show(5);"><img src="./assets/img/横向き池さん.jpg"></a>
+        </div>
+        <!--サムネを増やす時は、Show(6)というふうに、()の数字を増やしてここに続けて記述。-->
+
+        <span class="headerRight paddingRight2rem">
             Welcome to my WebPage!
         </span>
     </div>
+
     <section class="intro">
         <div class="container-in">
             <input type="checkbox" class="navBtn" id="navBtn" />
@@ -38,12 +50,19 @@
                 </ul>
             </nav>
         </div>
+
+        <!-- 拡大画像 -->
+        <img src="https://source.unsplash.com/cTO6DWSIdWI" id="Ga">
+        <!--コメント位置、最初のコメントとid="Me"を記述-->
+        <p id="Me" width="300">嵐の中の海の船 by イヴァン・アイヴァゾフスキー</p>
+
         <div class="content">
-            <div class="header-group">
-                <h1 class="header-title">Hi there !</h1>
-                <span>enjoy</span>
+            <div class="hello-group">
+                <h1 class="hello-title">Hi there !</h1>
+                <span>My Name is Ikeda Atsushi</span>
             </div>
         </div>
+
     </section>
 
     <!-- ABOUT -->
@@ -54,7 +73,6 @@
             プログラミングスクール講師。1991年2月2日生まれ。千葉県佐倉市出身。東洋大学卒。2012年に水面から逆バンジーを経験。2012年砂漠緑化ボランティアに参加。ボランティア中にバギーに乗る。乗るのが好きな彼はラクダにも乗る。パオでの流れ星は、4人にとっての大切な思い出である。2015年、ゴルフの打ちっぱなしへ。ニックネームは「だーいけ」。趣味はトライアスロン。独身。フィリピンのセブにプール庭付きの家持ち。
         </div>
     </section>
-
     <section id="about2" class="services">
         <h2>What I do</h2>
         <div class="services-container">
@@ -65,40 +83,39 @@
                 </div>
                 <h3>Good Voice</h3>
                 <p>池さんは毎朝、ファミリーマートのホットケーキを食べます。彼がトライアスロンを続けられるのは、健康な朝食があってこそです。<br>
-                    Mr. Pond eats Family Mart's hot cake every morning. He can continue his triathlon only because of a healthy breakfast.</p>
+                    Mr. Pond eats Family Mart's hot cake every morning. He can continue his triathlon only because of a
+                    healthy breakfast.</p>
             </div>
             <div class="service">
                 <div class="logo">
                     <i class="fa fa-headphones fa-3x" aria-hidden="true"></i>
                     <div class="uramen2"></div>
                 </div>
-
                 <h3>Animal talk</h3>
-                <p>池さんはほぼ毎日、apple watchをつけます。上衣はラフにアロハシャツを、下衣はジーパンを愛用しています。あとメガネは必須です。<br>
-                Mr. Pond wears an apple watch almost every day. The coat wears an aloha shirt for rough and the cloth wears a zippan.After the glasses are required.</p>
+                <p>池さんはほぼ毎日、apple watchをつけます。上衣はラフにアロハシャツを、下衣はジーパンを愛用しています。視力良好で、ブルーライトカットのおしゃれメガネを使います。<br>
+                    Mr. Pond wears an apple watch almost every day. The coat wears an aloha shirt for rough and the
+                    cloth wears a zippan.After the glasses are required.</p>
             </div>
             <div class="service">
                 <div class="logo">
                     <i class="fa fa-volume-up fa-3x" aria-hidden="true"></i>
                     <div class="uramen3"></div>
                 </div>
-
                 <h3>Good commander</h3>
                 <p>池さんの授業は、「とりあえず」が沢山でてきます。池さんは現場で使わなければ、「俺は使ったことがない」とたまに笑いをとります。<br>
-                Mr. Ike's class comes with a lot of "for now". If I don't use it in the field, I will occasionally laugh at "I've never used it."</p>
+                    Mr. Ike's class comes with a lot of "for now". If I don't use it in the field, I will occasionally
+                    laugh at "I've never used it."</p>
             </div>
         </div>
-        <div class="clear"></div>
     </section>
-
-
 
     <!-- Portfolio -->
     <section id="about3" class="portfolio">
         <h2>Portfolio</h2>
         <div class="projects">
             <div class="project">
-                <a href="#" target="_blank">
+                <a href="https://www.facebook.com/pages/City-Sports-Club-Ayala-Center-Cebu/463202367037473"
+                    target="_blank">
                     <div class="project-overlay"></div>
                     <img class="project-image" src="/assets/img/池さん飛ぶ.jpg">
                     <div class="project-details">
@@ -106,19 +123,17 @@
                     </div>
                 </a>
             </div>
-
             <div class="project">
-                <a href="#" target="_blank">
+                <a href="http://www.family.co.jp/goods/bread/1536744.html" target="_blank">
                     <div class="project-overlay"></div>
-                    <img class="project-image" src="https://source.unsplash.com/ISI5DlnYvuY">
+                    <img class="project-image" src="/assets/img/池さん朝食.jpg">
                     <div class="project-details">
-                        <p class="project-description">池さん海行く</p>
+                        <p class="project-description">池さんのお気に入りの朝食</p>
                     </div>
                 </a>
             </div>
-
             <div class="project">
-                <a href="#" target="_blank">
+                <a href="https://www.facebook.com/atsushiikeda02" target="_blank">
                     <div class="project-overlay"></div>
                     <img class="project-image" src="assets/img/池さんラクダに乗る.jpg">
                     <div class="project-details">
@@ -126,29 +141,26 @@
                     </div>
                 </a>
             </div>
-
             <div class="project">
-                <a href="#" target="_blank">
+                <a href="https://www.wantedly.com/projects/276120" target="_blank">
                     <div class="project-overlay"></div>
-                    <img class="project-image" src="/assets/img/池さん会社員姿.jpg">
+                    <img class="project-image" src="/assets/img/池さんとツーショット.jpg">
                     <div class="project-details">
                         <p class="project-description">池さん働く</p>
                     </div>
                 </a>
             </div>
-
             <div class="project">
-                <a href="#" target="_blank">
+                <a href="https://en-jp.wantedly.com/companies/nexseed/post_articles/153417" target="_blank">
                     <div class="project-overlay"></div>
-                    <img class="project-image" src="https://source.unsplash.com/3l3RwQdHRHg">
+                    <img class="project-image" src="/assets/img/heyikesan.jpg">
                     <div class="project-details">
-                        <p class="project-description">池さんオーロラ見に行く</p>
+                        <p class="project-description">池さん頑張ってる人支えたい</p>
                     </div>
                 </a>
             </div>
-
             <div class="project">
-                <a href="#" target="_blank">
+                <a href="https://www.shochikugeino.co.jp/talents/akemin/" target="_blank">
                     <div class="project-overlay"></div>
                     <img class="project-image" src="/assets/img/池さんバギーに乗る.jpg">
                     <div class="project-details">
@@ -167,33 +179,33 @@
                     <i class="far fa-envelope" aria-hidden="true"></i>
                 </a>
             </li>
-
             <li class="social">
-                <a href="https://twitter.com/" target="_blank" class="twitter">
-                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                <a href="https://en-jp.wantedly.com/companies/nexseed/post_articles/153417" target="_blank"
+                    class="interview">
+                    <i class="far fa-newspaper" aria-hidden="true"></i>
                 </a>
             </li>
-
             <li class="social">
-                <a href="https://facebook.com/" target="_blank" class="facebook">
+                <a href="https://www.facebook.com/atsushiikeda02" target="_blank" class="facebook">
                     <i class="fab fa-facebook-f" aria-hidden="true"></i>
                 </a>
             </li>
-
             <li class="social">
-                <a href="https://codepen.io/" target="_blank" class="codepen">
-                    <i class="fab fa-codepen" aria-hidden="true"></i>
+                <a href="https://github.com/Ai0202" target="_blank" class="github">
+                    <i class="fab fa-github" aria-hidden="true"></i>
                 </a>
             </li>
         </ul>
-        <div class="clear"></div>
+
     </section>
-    <div class="scrolltop">
-        <div class="scroll-icon"><i class="fa fa-4x fa-angle-up"></i></div>
+
+    <!-- scroll topへ -->
+    <div class="scrollTop">
+        <i class="fa fa-4x fa-angle-double-up"></i>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
     <script src="/assets/js/app.js"></script>
 </body>
 
