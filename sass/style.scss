@@ -2,35 +2,22 @@
 @import "./base/**";
 @import "./modules/**";
 @import "./pages/about.scss";
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
 
-/* Colors */
-$bg-color-1: #2d2d2d;
-$bg-color-2 : #f9f9f9;
 
-$bg-gradient-1: #000111;
-$bg-gradient-2: #380047;
-$bg-gradient-3: #1f0029;
-
-$text-color-1: #fff;
-$text-color-2: #c2c2c2;
-$text-color-3: #4d4d4d;
-$text-color-4: #2d2d2d;
-
-// レスポンシブ対応
-// map (JSの連想配列みたいなもの)
+// レスポンシブ対応map
 $breakpoints: (
-    xs: "only screen and (max-width: 480px)",
-    s: "only screen and (max-width: 575px)",
-    m: "only screen and (max-width: 768px)",
-    l: "only screen and (max-width: 991px)",
-    xl: "only screen and (max-width: 1199px)",
+  xs: "only screen and (max-width: 510px)",
+  s: "only screen and (max-width: 575px)",
+  m: "only screen and (max-width: 768px)",
+  l: "only screen and (max-width: 991px)",
+  xl: "only screen and (max-width: 1199px)",
 );
 @mixin media($breakpoint) {
     @media #{map-get($breakpoints, $breakpoint)} {
         @content;
     }
 }
-
 //ここからがレスポンシブＬ
 @include media(l){
     .services .services-container .service{
@@ -40,13 +27,73 @@ $breakpoints: (
       margin-right: 5%;
       margin-bottom: 5%;
   }
+  .container{
+    
+    .m_size{
+    /*サムネの表示位置指定*/
+    max-width: 100%;
+    position: absolute;
+    right: 0px;
+    }
+    .headerRight {
+      display: none;
+    }
+  }
+
+  .intro{
+    width: 100%;
+    height: 50%;
+  }
+
   .portfolio .projects .project{
       width: 45%;
       margin-left: 2.5%;
       margin-right: 2.5%;
   }
-}
 
+
+ .content{
+   height: 0vh;
+ 
+   .hello-group{
+     width: 200px;
+     height: 110px;
+     padding: 25px;
+     border: 2px solid $bg-color-2;
+     font-family: 'Times New Roman', Times, serif;
+     text-transform: uppercase;
+     text-align: center;
+     box-shadow: inset 0px 0px 10px 0px #2c3e50;
+     filter:progid:DXImageTransform.Microsoft.Shadow(color=#2c3e50, Direction=NaN, Strength=2);
+     opacity: 0;
+     animation-name: fadeIn;
+     animation-delay: 1s;
+     animation-duration: 2s;
+     animation-fill-mode: both;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     
+      @keyframes fadeIn{
+      0%{opacity:0;}
+      100%{opacity:1;}
+     }
+   
+     .hello-title{
+       color:  $bg-color-2;
+       font-size: 1.8em;
+       text-shadow: 5px 2px #2d2d2d;
+     }
+   
+      span{
+       color: #eaeaea;
+       font-size:1.2em;
+       text-shadow: 0px 2px 5px #2d2d2d;
+       
+     }
+   }
+ }
+}
 //ここからがレスポンシブm　PC画面小さくした用
 @include media(m){
     .services{
@@ -57,7 +104,6 @@ $breakpoints: (
        display: grid;
       }
     }
-
     .intro .content .header-group{
         width: 350px;
         .header-title{
@@ -67,15 +113,35 @@ $breakpoints: (
             font-size: $font-size-1;
           }
     }
+    .container{
+    
+      .m_size{
+      /*サムネの表示位置指定*/
+      display: none;
+      }
+      .headerRight {
+        display: none;
+      }
+    }
 }
-
 //ここからがレスポンシブxs スマホ用
 @include media(xs){
-    .portfolio .projects .project{
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
+
+  .portfolio{
+    .projects{
+      display: flex;
+      flex-direction: column;
+        max-width:100%;
+        margin: auto;
+        margin-top: 10px;
+        align-items: center;
+      .project{
+        width: 70%;
+        margin: 5%;
+        
+      }
     } 
+   } 
     .contact .socials{
         width: 100%;
           .social{
@@ -85,317 +151,3 @@ $breakpoints: (
 
 }
 //ここまでがレスポンシブ対応
-
-<<<<<<< HEAD
-
-
-=======
-//maeのところ
->>>>>>> 132f8a10fbf424b71ef1a14432fba0c5d3c6b855
-.intro{
-  background: url("https://source.unsplash.com/cTO6DWSIdWI");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  height: 100vh;
-}
-
-.header-group{
-  background: rgba(255,255,255,0.2);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 550px;
-  padding: 20px 50px;
-  border: 4px solid #fff;
-  font-family: 'Times New Roman', Times, serif;
-  text-transform: uppercase;
-  text-align: center;
-  -moz-box-shadow: inset 0px 0px 2px 0px #2c3e50;
-  -webkit-box-shadow: inset 0px 0px 2px 0px #2c3e50;
-  -o-box-shadow: inset 0px 0px 2px 0px #2c3e50;
-  box-shadow: inset 0px 0px 2px 0px #2c3e50;
-  filter:progid:DXImageTransform.Microsoft.Shadow(color=#2c3e50, Direction=NaN, Strength=2);
-  opacity: 0;
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  
-
-
-@keyframes fadeIn{
-  0%{opacity:0;}
-  100%{opacity:1;}
-}
-
-  .header-title{
-    color: #fff;
-    font-size: 6.5em;
-    text-shadow: 5px 2px #2d2d2d;
-  }
-
-  span{
-    color: #eaeaea;
-    font-size:2.8em;
-    text-shadow: 0px 2px 5px #2d2d2d;
-    }
-}
-
-/* ==========================================================================
-Google Fonts
-========================================================================== */
-@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
-/* ==========================================================================
-clearfix
-========================================================================== */
-.cf:before,
-.cf:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-
-.cf:after {
-  clear: both;
-}
-
-.cf {
-  *zoom: 1;
-}
-
-/* ==========================================================================
-html, body and stuff
-========================================================================== */
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-body {
-  font-size: 100%;
-  font-family: 'PT Sans', sans-serif;
-  background-color: #f3f3f3;
-}
-
-/* ==========================================================================
-text
-========================================================================== */
-.left {
-  text-align: left;
-}
-
-.center {
-  text-align: center;
-}
-
-.right {
-  text-align: right;
-}
-
-.justify {
-  text-align: justify;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-/* ==========================================================================
-padding / margin
-========================================================================== */
-.padding1rem {
-  padding: 1rem;
-}
-
-.paddingRight2rem {
-  padding: 0 2rem 0 0;
-}
-
-/* ==========================================================================
-links
-========================================================================== */
-a {
-  color: white;
-}
-
-/* ==========================================================================
-headlines
-========================================================================== */
-/* ==========================================================================
-awesome Fonts
-========================================================================== */
-i {
-  color: #d1d4d9;
-  margin: 0 1rem 0 0;
-}
-
-/* ==========================================================================
-layout
-========================================================================== */
-.container {
-  max-width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-<<<<<<< HEAD
-  margin-top: 0px;
-  margin-bottom: 0px;
-=======
-  display: absolute;
-  color: white;
-  background-color: #4a4e54;
-  line-height: 4rem;
-  border: 1px solid grey;
->>>>>>> 132f8a10fbf424b71ef1a14432fba0c5d3c6b855
-}
-
-.floatLeft {
-  float: left;
-}
-
-.floatRight {
-  float: right;
-}
-
-.posAbs {
-  position: absolute;
-}
-
-.third {
-  width: 33.3333%;
-}
-
-.half {
-  width: 50%;
-}
-
-.twoThird {
-  width: 66.6666%;
-}
-
-.quarter {
-  width: 25%;
-}
-
-label {
-  cursor: pointer;
-  border-right: 1px solid #d1d4d9;
-  display: block;
-  height: 4rem;
-  width: 4rem;
-  position: relative;
-}
-label span {
-  border-radius: 15%;
-  height: 3px;
-  width: 32px;
-  background-color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  transition: all 0.3s ease-out;
-}
-label span:before {
-  border-radius: 15%;
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  top: 400%;
-  transition: all 0.3s ease-out;
-}
-label span:after {
-  border-radius: 15%;
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  top: -400%;
-  transition: all 0.3s ease-out;
-}
-
-label:hover span {
-  height: 0;
-  transition: all 0.3s ease-out;
-}
-label:hover span:before {
-  height: 3px;
-  transform: rotate(-45deg);
-  transition: all 0.3s ease-out;
-}
-label:hover span:after {
-  height: 3px;
-  transform: rotate(45deg);
-  transition: all 0.3s ease-out;
-}
-
-
-nav {
-  border-left: 1px solid #d1d4d9;
-  border-right: 1px solid #d1d4d9;
-  border-bottom: 1px solid #d1d4d9;
-  max-width: 300px;
-  background-color: white;
-  transform: translateX(-100%) scale(1, 0.1);
-  transform-origin: top left;
-  transition: all 0.3s ease-out;
-}
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-nav ul li {
-  border-top: 1px solid #efefef;
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: all 0.6s ease-out;
-  display: inline-block;
-  font-size: 1rem;
-}
-nav ul li a {
-  transition: all 0.3s ease-out;
-  line-height: 1rem;
-  text-decoration: none;
-  color: #8a8d92;
-  display: block;
-  padding: 1rem;
-}
-nav ul li:first-child {
-  border-top: none;
-}
-nav ul li:hover a {
-  color: white;
-  background-color: #6d747e;
-  transition: all 0.3s ease-out;
-}
-nav ul li:hover a i {
-  color: white;
-}
-
-.navBtn:checked ~ nav {
-  transform: translateX(0);
-  transition: all 0.3s ease-out;
-}
-
-.navBtn:checked ~ nav ul li {
-  opacity: 1;
-  transform: translateX(0);
-  transition: all 0.6s ease-out;
-}
-
-.navBtn {
-  display: none;
-}

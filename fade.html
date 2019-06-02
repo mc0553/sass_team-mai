@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>スライドショー２５面白２</title>
+
+<link rel="stylesheet" href="/new.css">
+
+</head>
+<body>
+
+<!--★サムネイル(小さな画像)指定。拡大画像と同じものをCSSでサイズを縮小して表示してますが、別に縮小画像を作成してその画像を指定しても可能。今回は、サムネイルには透明度がついています。クリック時は、透明度が消えます-->
+<p class="m_size">
+<a href="javascript:Show(0);"><img src="./assets/img/池さんバギーに乗る.jpg"></a>
+<a href="javascript:Show(1);"><img src="./assets/img/池さんラクダに乗る.jpg"></a>
+<a href="javascript:Show(2);"><img src="./assets/img/池さん会社員姿.jpg"></a>
+<a href="javascript:Show(3);"><img src="./assets/img/池さん飛ぶ.jpg"></a>
+<a href="javascript:Show(4);"><img src="./assets/img/池さんbefore after.jpg"></a>
+<a href="javascript:Show(5);"><img src="./assets/img/沖縄校3期生.jpg"></a>
+</p>
+
+<!--★サムネイル画像を増やす時は、Show(6)というふうに、()の数字を増やしてここに続けて記述。下の拡大画像もコメントも増やします-->
+
+<!--★拡大画像位置。最初の画像とid="Ga"を記述-->
+<img src="./assets/img/enjoy.jpg" id="Ga">
+
+<!--★コメント位置。最初のコメントとid="Me"を記述-->
+<p id="Me" width="300">嵐の中の海の船 by イヴァン・アイヴァゾフスキー</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/assets/js/app.js"></script>
+</body>
+</html>
