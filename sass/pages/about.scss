@@ -1,37 +1,256 @@
-
-// ここからがやっさんの担当エリア 
-//課題、ネスト、&、import、 パーシャル、 mixinを使用
-
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
+// フォントの変数
 $font: 'Ubuntu', sans-serif;
 $font-size-1: 1.2em;
 $font-size-2: 1.8em;
 $font-size-3: 2em;
 $font-size-4: 2.5em;
-
+//カラー変数
 $bg-color-1: #2d2d2d;
 $bg-color-2 : #f9f9f9;
-
 $bg-gradient-1: #000111;
 $bg-gradient-2: #380047;
 $bg-gradient-3: #1f0029;
-
 $text-color-1: #fff;
 $text-color-2: #c2c2c2;
 $text-color-3: #4d4d4d;
 $text-color-4: #2d2d2d;
 
-@mixin uramen() {
+
+//ここからトップ画面mae担当 
+ //ここからheader
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background: $bg-gradient-2;
+  display: flex;
+  align-items: center;
+
+  .m_size{
+    /*サムネの表示位置指定*/
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    right: 260px;
+
+     img{
+      width:auto; 
+      margin: 3px;
+      height: 55px;
+      border: solid 1px $bg-color-2;
+      border-radius: 10px;
+      opacity:0.6;
+      &:hover{opacity:1.0;}
+     }
+  }
+
+  .headerRight {
+    position: absolute;
+    right: 20px;
+    color: $text-color-1;
+  }
+}
+
+//ここからnavbtnのレーベル設定
+@mixin labelSpan {
+  border-radius: 15%;
+  position: absolute;
+  content: "";
+  height: 100%;
   width: 100%;
-  box-sizing: border-box;
-  transform: rotateX(90deg);
-  transition: all 0.8s ease 0.05s;
-  transform-origin: 50% 50% -25px;
-  background-size: cover;
+  background-color:$bg-color-2;
+  transition: all 0.3s ease-out;
+}
+
+label {
+  cursor: pointer;
+  border-right: 1px solid #d1d4d9;
+  display: block;
+  height: 4rem;
+  width: 4rem;
+  position: relative;
+  
+  span {
+    border-radius: 15%;
+    height: 3px;
+    width: 32px;
+    background-color: $bg-color-2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    transition: all 0.3s ease-out;
+  }
+
+  span:before {
+    @include labelSpan();
+    top: 400%;
+  }
+  span:after {
+    @include labelSpan();
+    top: -400%;
+  }
+  //レーベルをホバー
+  &:hover span {
+    height: 0;
+    transition: all 0.3s ease-out;
+    &:before {
+      height: 3px;
+      transform: rotate(-45deg);
+      transition: all 0.3s ease-out;
+    }
+    &:after {
+      height: 3px;
+      transform: rotate(45deg);
+      transition: all 0.3s ease-out;
+    }
+  }
+}
+
+//ここまでがheader
+
+.intro{
+  width: 100%;
+  height: 100%;
+
+  #Ga{
+    position:absolute; top:0px; left:0px;
+    width:100%;
+    height:100%;
+    z-index:-1;
+  }
+
+  /*コメント不要なら以下は削除*/
+  #Me{
+  position:absolute; 
+  bottom:15vh; 
+  right:0px; 
+  color:$bg-color-2; /*★コメント文字の色*/
+  padding:5px;
+  background-color: rgba(0,0,0,0.5);/*★背景透過指定。0は完全透過。1は完全不透過。50%不透過指定*/
+   animation-name: slideInRight;
+   animation-duration: 1.5s;
+   animation-timing-function: ease-in;
+  }
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px);}
+    to   { opacity: 1; transform: translateX(0);    }
+  }
+  #keyvisual { overflow: hidden }
+
+  .container-in{
+    //出てくるナビバー
+    nav {
+      border-left: 1px solid $bg-gradient-2;
+      border-right: 1px solid $bg-gradient-2;
+      border-bottom: 1px solid $bg-gradient-2;
+      max-width: 200px;
+      background-color:$bg-gradient-3;
+      transform: translateX(-100%) scale(1, 0.1);
+      transform-origin: top left;
+      transition: all 0.3s ease-out;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        li:first-child {
+          border-top: none;
+        }
+
+        li {
+          border-top: 1px solid #efefef;
+          opacity: 0;
+          transform: translateX(-100%);
+          transition: all 0.6s ease-out;
+          display: inline-block;
+          font-size: 1rem;
+
+          &:hover a {
+            color: white;
+            background-color: #6d747e;
+            transition: all 0.3s ease-out;
+          }
+          &:hover a i {
+            color: white;
+          }
+
+          a {
+            transition: all 0.3s ease-out;
+            line-height: 1rem;
+            text-decoration: none;
+            color: #8a8d92;
+            display: block;
+            padding: 1rem;
+          }
+        }
+      }
+    }
+    .navBtn:checked ~ nav {
+      transform: translateX(0);
+      transition: all 0.3s ease-out;
+    } 
+    .navBtn:checked ~ nav ul li {
+      opacity: 1;
+      transform: translateX(0);
+      transition: all 0.6s ease-out;
+    }
+    .navBtn {
+      display: none;
+    }
+  }
+}
+
+.content{
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .hello-group{
+    background: rgba(255,255,255,0.3);
+    margin: 0 10px;
+    width: 400px;
+    height: 220px;
+    padding: 50px;
+    border: 4px solid $bg-color-2;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: inset 0px 0px 10px 0px #2c3e50;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#2c3e50, Direction=NaN, Strength=2);
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-delay: 1s;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    
+     @keyframes fadeIn{
+     0%{opacity:0;}
+     100%{opacity:1;}
+    }
+  
+    .hello-title{
+      color:  $bg-color-2;
+      font-size: 3.5em;
+      text-shadow: 5px 2px #2d2d2d;
+    }
+  
+    span{
+      color: #eaeaea;
+      font-size:2em;
+      text-shadow: 0px 2px 5px #2d2d2d;
+    }
+  }
 }
 
 
+
+// ここからがやっさんの担当エリア 
 .about-myself{
     background: $bg-gradient-1;
     border-top: 5px solid $bg-gradient-1;
@@ -66,10 +285,21 @@ $text-color-4: #2d2d2d;
       text-align: center;
       line-height: 30px;
     }
-  }
+}
   
-  .services{
-    padding: 80px 0;
+
+//hoverで出てくる写真たちのmixin
+@mixin uramen() {
+  width: 100%;
+  box-sizing: border-box;
+  transform: rotateX(90deg);
+  transition: all 0.8s ease 0.05s;
+  transform-origin: 50% 50% -25px;
+  background-size: cover;
+}
+
+.services{
+  padding: 80px 0;
 
     h2{
       color: $text-color-4;
@@ -105,19 +335,17 @@ $text-color-4: #2d2d2d;
           -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
           font-size: $font-size-2;
-          //swip
+          //swipの要素
           perspective: 300px;
           transform-style: preserve-2d;
 
-         
+          //ホバーした時の動き
           &:hover{
             cursor: pointer;
             i{
                 transition: all 1s ease;
                 transform: translateZ(-200px);
-                
             }
-
             div{
                 transition: all 2.2s ease 0.3s;
                 height: 200px;
@@ -127,29 +355,25 @@ $text-color-4: #2d2d2d;
                 right: 50px;
                 top:-160px;
                 border: solid 2px $bg-gradient-2;
-
             }
           }
+          //ホバー要素ここまで
           
-
-           .uramen1{
+          .uramen1{
             //swift
             @include uramen();
             background-image: url(/assets/img/300360池さんバギーに乗る.jpg);
-           }
-           .uramen2{
+          }
+          .uramen2{
             //swift
             @include uramen();
             background-image: url(/assets/img/300360池さんラクダに乗る.jpg);
-           }
-           .uramen3{
+          }
+          .uramen3{
             //swift
             @include uramen();
             background-image: url(/assets/img/300360池さん会社員姿.jpg);
-           }
-            
-            
-
+          }
           i{
             //swift
             width: 100%;
@@ -177,50 +401,37 @@ $text-color-4: #2d2d2d;
         }
       }
     }
-  }
+}
 
-  //ここまでがやっさんのエリア
-  
-  .picture {
-    width: 200px;
-    cursor: pointer;
-  }
-  
-  #over {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
-    text-align:center;
-  }
+//JSでクリックされたら追加されるDivのid以下動作,ライトボックスの要素
+#over {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align:center;
+}
+.img-box {
+  position: relative;
+  margin-top: 100px;
+  display:inline-block;
+  background-image: url(/assets/img/池さんモデル風.jpg);
+  height: 600px;
+}
+.close {
+  position:absolute;
+  right:20px;
+  top:10px;
+  font-size:2em;
+  font-weight:bold;
+  color:#fff;
+  cursor:pointer;
+} 
+.lightbox {
+  width: 500px;
+}
 
-  
-  .img-box {
-    position: relative;
-    margin-top: 100px;
-    display:inline-block;
-    background-image: url(/assets/img/池さんモデル風.jpg);
-    height: 600px;
-  }
-  
-  .close {
-    position:absolute;
-    right:20px;
-    top:10px;
-    font-size:2em;
-    font-weight:bold;
-    color:#fff;
-    cursor:pointer;
-  }
-  
-  .lightbox {
-    width: 500px;
-  }
-  //ここまでがやっさんのエリア
-  
-  
-  .clear{
-    clear: both;
-  }
+//ここまでがやっさんのエリア
+
   
