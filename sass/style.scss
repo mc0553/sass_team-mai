@@ -43,6 +43,9 @@ $breakpoints: (
   .intro{
     width: 100%;
     height: 50%;
+    #Me{
+      display: none;
+    }
   }
 
   .portfolio .projects .project{
@@ -53,7 +56,8 @@ $breakpoints: (
 
 
  .content{
-   height: 0vh;
+   display: flex;
+   align-items: flex-start; 
  
    .hello-group{
      width: 200px;
@@ -70,9 +74,6 @@ $breakpoints: (
      animation-delay: 1s;
      animation-duration: 2s;
      animation-fill-mode: both;
-     display: flex;
-     align-items: center;
-     justify-content: center;
      
       @keyframes fadeIn{
       0%{opacity:0;}
@@ -81,7 +82,7 @@ $breakpoints: (
    
      .hello-title{
        color:  $bg-color-2;
-       font-size: 1.8em;
+       font-size: 1.4em;
        text-shadow: 5px 2px #2d2d2d;
      }
    
@@ -105,7 +106,6 @@ $breakpoints: (
       }
     }
     .intro .content .header-group{
-        width: 350px;
         .header-title{
             font-size: $font-size-4;
           }
@@ -117,12 +117,21 @@ $breakpoints: (
     
       .m_size{
       /*サムネの表示位置指定*/
-      display: none;
+      width: 80%;
+        
       }
       .headerRight {
         display: none;
       }
     }
+
+    .contact .socials{
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    
+    } 
+
 }
 //ここからがレスポンシブxs スマホ用
 @include media(xs){
@@ -144,9 +153,8 @@ $breakpoints: (
    } 
     .contact .socials{
         width: 100%;
-          .social{
-          width: 25%;
-          }
+        display: flex;
+        justify-content: flex-end;
     } 
 
 }
