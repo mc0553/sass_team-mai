@@ -15,10 +15,15 @@
 
 .container .m_size {
   /*サムネの表示位置指定*/
-  max-width: 100%;
   position: absolute;
   top: 0;
-  right: 260px;
+  left: 80px;
+  width: 70%;
+  opacity: 0.6;
+}
+
+.container .m_size:hover {
+  opacity: 1.0;
 }
 
 .container .m_size img {
@@ -27,16 +32,11 @@
   height: 55px;
   border: solid 1px #f9f9f9;
   border-radius: 10px;
-  opacity: 0.6;
-}
-
-.container .m_size img:hover {
-  opacity: 1.0;
 }
 
 .container .headerRight {
   position: absolute;
-  right: 20px;
+  right: 8px;
   color: #fff;
 }
 
@@ -311,7 +311,7 @@ label:hover span:after {
 
 .content .hello-group .hello-title {
   color: #f9f9f9;
-  font-size: 3.5em;
+  font-size: 3em;
   text-shadow: 5px 2px #2d2d2d;
 }
 

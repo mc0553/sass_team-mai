@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>IkeSan</title>
-    <link rel="stylesheet" href="{{ $styles.Permalink }}" >
+    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <link rel="stylesheet" href="./dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="./dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -20,13 +21,13 @@
     <div class="container">
         <label class="floatLeft" for="navBtn"><span></span></label>
         <!--サムネ(小)指定。拡大画像と同じものをCSSでサイズを縮小して表示してますが、別に縮小画像を作成してその画像を指定しても可能。サムネには透明加工付。クリック時は、透明度が消えるように-->
-        <div class="m_size">
-            <a href="javascript:Show(0);"><img src="./assets/img/池さん飛ぶ.jpg"></a>
-            <a href="javascript:Show(1);"><img src="./assets/img/池さんbefore after.jpg"></a>
-            <a href="javascript:Show(2);"><img src="./assets/img/沖縄校3期生.jpg"></a>
-            <a href="javascript:Show(3);"><img src="./assets/img/教える池さん.jpg"></a>
-            <a href="javascript:Show(4);"><img src="./assets/img/集団の池さん.jpg"></a>
-            <a href="javascript:Show(5);"><img src="./assets/img/横向き池さん.jpg"></a>
+        <div class="m_size owl-carousel">
+            <div><a href="javascript:Show(0);"><img src="./assets/img/池さん飛ぶ.jpg"></a></div>
+            <div><a href="javascript:Show(1);"><img src="./assets/img/池さんbefore after.jpg"></a></div>
+            <div><a href="javascript:Show(2);"><img src="./assets/img/沖縄校3期生.jpg"></a></div>
+            <div><a href="javascript:Show(3);"><img src="./assets/img/教える池さん.jpg"></a></div>
+            <div><a href="javascript:Show(4);"><img src="./assets/img/集団の池さん.jpg"></a></div>
+            <div><a href="javascript:Show(5);"><img src="./assets/img/横向き池さん.jpg"></a></div> 
         </div>
         <!--サムネを増やす時は、Show(6)というふうに、()の数字を増やしてここに続けて記述。-->
 
@@ -207,7 +208,8 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="./dist/owl.carousel.min.js"></script>
     <script src="/assets/js/app.js"></script>
 </body>
 
