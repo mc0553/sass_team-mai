@@ -1,3 +1,2 @@
-ギットで管理する必要がないものを書いておく場所
-node_modules
-css
+node_modules/
+public/
