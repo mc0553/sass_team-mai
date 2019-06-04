@@ -288,10 +288,15 @@ table {
 
 .container .m_size {
   /*サムネの表示位置指定*/
-  max-width: 100%;
   position: absolute;
   top: 0;
-  right: 260px;
+  left: 80px;
+  width: 70%;
+  opacity: 0.6;
+}
+
+.container .m_size:hover {
+  opacity: 1.0;
 }
 
 .container .m_size img {
@@ -300,16 +305,11 @@ table {
   height: 55px;
   border: solid 1px #f9f9f9;
   border-radius: 10px;
-  opacity: 0.6;
-}
-
-.container .m_size img:hover {
-  opacity: 1.0;
 }
 
 .container .headerRight {
   position: absolute;
-  right: 20px;
+  right: 8px;
   color: #fff;
 }
 
@@ -584,7 +584,7 @@ label:hover span:after {
 
 .content .hello-group .hello-title {
   color: #f9f9f9;
-  font-size: 3.5em;
+  font-size: 3em;
   text-shadow: 5px 2px #2d2d2d;
 }
 
@@ -822,13 +822,21 @@ label:hover span:after {
     width: 100%;
     height: 50%;
   }
+  .intro #Me {
+    display: none;
+  }
   .portfolio .projects .project {
     width: 45%;
     margin-left: 2.5%;
     margin-right: 2.5%;
   }
   .content {
-    height: 0vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
   }
   .content .hello-group {
     width: 200px;
@@ -850,15 +858,6 @@ label:hover span:after {
     animation-duration: 2s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
   }
   @-webkit-keyframes fadeIn {
     0% {
@@ -878,7 +877,7 @@ label:hover span:after {
   }
   .content .hello-group .hello-title {
     color: #f9f9f9;
-    font-size: 1.8em;
+    font-size: 1.4em;
     text-shadow: 5px 2px #2d2d2d;
   }
   .content .hello-group span {
@@ -896,9 +895,6 @@ label:hover span:after {
   .services .services-container {
     display: grid;
   }
-  .intro .content .header-group {
-    width: 350px;
-  }
   .intro .content .header-group .header-title {
     font-size: 2.5em;
   }
@@ -907,10 +903,19 @@ label:hover span:after {
   }
   .container .m_size {
     /*サムネの表示位置指定*/
-    display: none;
+    width: 80%;
   }
   .container .headerRight {
     display: none;
+  }
+  .contact .socials {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
   }
 }
 
@@ -936,9 +941,12 @@ label:hover span:after {
   }
   .contact .socials {
     width: 100%;
-  }
-  .contact .socials .social {
-    width: 25%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
   }
 }
 

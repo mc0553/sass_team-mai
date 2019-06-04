@@ -54,12 +54,22 @@ function setOpacity(img, opacity) {
 
 $( document ).ready(function() {
 
-  $('.m_size').click(function(){
-    $('.content').css({'justify-content':'flex-end','align-items':'flex-end' });
-    $('.hello-group').css({'width':'300px','height':'80px','padding':'5px','background':'rgba(0,0,0,0.8)' });
+  $('.m_size').click(function(){    
+    $('.content').css({'justify-content':'flex-start','align-items':'flex-end' });
+    $('.hello-group').css({'width':'300px','height':'80px','background':'rgba(0,0,0,0.8)','padding':'5px' });
     $('.hello-title').remove();
       
-	});
+  });
+  
+  let owl = $('.owl-carousel');
+  owl.owlCarousel({
+  items:12,
+  loop:true,
+  autoplay:true,
+  autoplayTimeout:6000,
+  autoplayHoverPause:true,
+  autoWidth:true,  
+  });
   //ここまでがトップ画面までの変化
 
     let image = $('.img-profile');
@@ -122,4 +132,6 @@ $( document ).ready(function() {
     }, 1500 );
     return false
   })
+
+
 });
